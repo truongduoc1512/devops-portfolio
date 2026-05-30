@@ -108,7 +108,7 @@ export const PROJECTS = [
 
 export const CONTACT = {
   address: 'Hyderabad, Telangana, India',
-  phoneNo: '+91 9000600559',
+  phoneNo: '+91 **********',
   email: 'neerajnakka.n@gmail.com',
   social: {
     github: 'https://github.com/neerajnakka',
