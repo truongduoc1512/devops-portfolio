@@ -118,6 +118,52 @@ export const SKILLS = [
     category: "devops",
     level: 90,
   },
+
+  // Development
+{
+  name: "Python",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  category: "development",
+  level: 90,
+},
+{
+  name: "Java",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  category: "development",
+  level: 90,
+},
+{
+  name: "JavaScript",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg",
+  category: "development",
+  level: 90,
+},
+{
+  name: "Node.js",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg",
+  category: "development",
+  level: 90,
+},
+{
+  name: "React",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  category: "development",
+  level: 90,
+},
+
+ // Databases
+  {
+    name: "MongoDB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    category: "database",
+    level: 90,
+  },
+  {
+    name: "MySQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    category: "database",
+    level: 90,
+  },
 ];
 
 export const PROJECTS = [
