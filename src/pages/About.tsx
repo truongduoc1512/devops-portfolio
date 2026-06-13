@@ -4,22 +4,24 @@ import { Typewriter } from '../components/Typewriter';
 import { Calendar, MapPin, Code, Zap } from 'lucide-react';
 
 export const About = () => {
-  const timeline = [
-    {
-      year: '2023 - Present',
-      title: 'Freelance DevOps & Cloud Engineer',
-      company: 'Self-Employed',
-      description:
-        'Working on freelance projects focusing on cloud automation, CI/CD, and container orchestration using AWS, Docker, and Kubernetes.',
-      icon: Code,},
-    {
-      year: '2019 - 2023',
-      title: 'Computer Science Graduate',
-      company: 'CVR College Of Engineering',
-      description: 'Bachelor\'s degree with focus on software engineering and cloud computing.',
-      icon: Calendar,
-    },
-  ];
+const timeline = [
+  {
+    year: '2023 - Present',
+    title: 'DevOps Engineer',
+    company: '',
+    description:
+      'Building and managing cloud infrastructure, CI/CD pipelines, containerized workloads, and automation solutions across AWS and Google Cloud Platform (GCP) using Terraform, Docker, Kubernetes, and modern DevOps practices.',
+    icon: Code,
+  },
+  {
+    year: '2019 - 2023',
+    title: 'Computer Science Graduate',
+    company: 'CVR College Of Engineering',
+    description:
+      "Bachelor's degree with focus on software engineering and cloud computing.",
+    icon: Calendar,
+  },
+];
 
   const philosophyPoints = [
     {
@@ -67,7 +69,7 @@ export const About = () => {
                 </div>
                 <div className="space-y-4 text-neutral-200 leading-relaxed">
                   <Typewriter
-                    text="Hello, I'm Neeraj Chandra Nakka, and I turn code into production reality."
+                    text="Hello, I'm Neeraj Chandra Nakka, and I build reliable cloud platforms that transform ideas into production-ready systems."
                     delay={30}
                     className="text-primary-500 font-semibold block mb-4"
                   />
@@ -79,11 +81,11 @@ export const About = () => {
                     Over time, that foundation evolved into a passion for DevOps and Cloud Engineering, 
                     where I now focus on crafting scalable infrastructure, clean CI/CD pipelines, and resilient deployments.
                   </p>
-                  <p>
-                    I work across AWS and Azure, orchestrate containers with Docker and Kubernetes, 
-                    and define infrastructure with Terraform and automation scripts. Behind the command line, 
-                    I'm equally comfortable in version control and workflow automation, using Git, GitHub, 
-                    and GitLab CI/CD to bridge collaboration and delivery.
+                 <p>
+                    I work across AWS and Google Cloud Platform (GCP), orchestrate containers with Docker and Kubernetes,
+                    and define infrastructure using Terraform and automation tooling. Behind the command line,
+                    I'm equally comfortable in version control and workflow automation, using Git, GitHub,
+                    GitLab CI/CD, and modern observability practices to bridge collaboration and delivery.
                   </p>
                   <p className="text-primary-500 font-medium">
                     For me, DevOps isn't just about speed—it's about precision, repeatability, 
@@ -112,7 +114,7 @@ export const About = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Cloud Platforms</span>
-                    <span className="text-primary-500 font-mono">AWS, Azure</span>
+                    <span className="text-primary-500 font-mono">AWS, GCP</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Projects</span>
@@ -130,7 +132,13 @@ export const About = () => {
                   Specializations
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Cloud Architecture', 'CI/CD Pipelines', 'Infrastructure as Code', 'Container Orchestration', 'Microservices'].map((skill) => (
+                  {[
+  'Cloud Architecture',
+  'Site Reliability Engineering',
+  'Infrastructure as Code',
+  'CI/CD Automation',
+  'Kubernetes & Containers'
+].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 bg-neutral-800 text-neutral-200 text-sm rounded-md border border-neutral-700 hover:border-primary-500/50 transition-colors"
@@ -159,7 +167,7 @@ export const About = () => {
               Career Timeline
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              My journey from full-stack development to DevOps engineering
+              My journey from software development to Cloud, DevOps, and Site Reliability Engineering
             </p>
           </motion.div>
 
@@ -193,7 +201,11 @@ export const About = () => {
                       <div className="bg-bg-elevated border border-neutral-700 rounded-lg p-6 hover:border-primary-500/50 transition-colors shadow-card">
                         <div className="font-mono text-accent-500 text-sm mb-2">{item.year}</div>
                         <h3 className="font-semibold text-xl text-neutral-200 mb-1">{item.title}</h3>
-                        <div className="text-primary-500 font-medium mb-3">{item.company}</div>
+                        {item.company && (
+  <div className="text-primary-500 font-medium mb-3">
+    {item.company}
+  </div>
+)}
                         <p className="text-neutral-400 text-sm leading-relaxed">{item.description}</p>
                       </div>
                     </div>
