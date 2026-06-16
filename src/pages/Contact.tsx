@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
 import { Typewriter } from '../components/Typewriter';
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, ExternalLink, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Linkedin, ExternalLink, CheckCircle } from 'lucide-react';
 import { CONTACT } from '../data/portfolio';
 
 export const Contact = () => {
@@ -107,7 +107,7 @@ export const Contact = () => {
       icon: Mail,
       label: 'Email',
       value: CONTACT.email,
-      href: `mailto:${CONTACT.email}`,
+      href: `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT.email}`,
       color: 'text-blue-500',
     },
     {
@@ -139,12 +139,6 @@ export const Contact = () => {
       icon: Linkedin,
       color: 'hover:text-blue-500',
     },
-    {
-      name: 'Twitter',
-      url: CONTACT.social.twitter,
-      icon: Twitter,
-      color: 'hover:text-blue-400',
-    },
   ];
 
   return (
@@ -169,11 +163,11 @@ export const Contact = () => {
               <div className="bg-bg-surface border border-neutral-700 rounded-xl p-8 shadow-card">
                 <div className="mb-8">
                   <h2 className="font-mono text-2xl font-bold text-primary-500 mb-4">
-                    Send Message
+                    Recruiter Contact
                   </h2>
                   <div className="font-mono text-sm text-accent-500">
                     <span>$</span>
-                    <span className="text-primary-500 ml-2">cat message_template.txt</span>
+                    <span className="text-primary-500 ml-2">cat job_offer_template.txt</span>
                   </div>
                 </div>
 
@@ -207,7 +201,7 @@ export const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         className={`w-full bg-bg-elevated border ${errors.name ? 'border-red-500' : 'border-neutral-700'} rounded-md px-4 py-3 text-neutral-200 placeholder-neutral-600 font-mono focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors`}
-                        placeholder="Your full name"
+                        placeholder="Your Name / Company Name"
                       />
                       {errors.name && (
                         <p className="text-red-500 text-sm mt-2">{errors.name}</p>
@@ -245,7 +239,7 @@ export const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         className={`w-full bg-bg-elevated border ${errors.subject ? 'border-red-500' : 'border-neutral-700'} rounded-md px-4 py-3 text-neutral-200 placeholder-neutral-600 font-mono focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors`}
-                        placeholder="What's this about?"
+                        placeholder="e.g., Job Opportunity / Interview Invitation"
                       />
                       {errors.subject && (
                         <p className="text-red-500 text-sm mt-2">{errors.subject}</p>
@@ -264,7 +258,7 @@ export const Contact = () => {
                         onChange={handleChange}
                         rows={6}
                         className={`w-full bg-bg-elevated border ${errors.message ? 'border-red-500' : 'border-neutral-700'} rounded-md px-4 py-3 text-neutral-200 placeholder-neutral-600 font-mono focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none`}
-                        placeholder="Tell me about your project or inquiry..."
+                        placeholder="Please describe the job role, requirements, or share your invitation/message here..."
                       />
                       {errors.message && (
                         <p className="text-red-500 text-sm mt-2">{errors.message}</p>
@@ -315,33 +309,40 @@ export const Contact = () => {
                   {contactMethods.map((method) => {
                     const IconComponent = method.icon;
                     return (
-                      <div key={method.label} className="flex items-center space-x-4">
-                        <div className={`p-3 bg-bg-surface rounded-lg ${method.color}`}>
+                      <a
+                        key={method.label}
+                        href={method.href}
+                        target={method.label === 'Email' ? "_blank" : undefined}
+                        rel={method.label === 'Email' ? "noopener noreferrer" : undefined}
+                        className={`flex items-center space-x-4 p-2 rounded-lg hover:bg-bg-surface/50 transition-all duration-200 group ${method.href === '#' ? 'pointer-events-none' : ''}`}
+                      >
+                        <div className={`p-3 bg-bg-surface rounded-lg ${method.color} group-hover:scale-105 transition-transform`}>
                           <IconComponent size={20} />
                         </div>
                         <div>
-                          <div className="font-medium text-neutral-200">{method.label}</div>
+                          <div className="font-medium text-neutral-200 group-hover:text-primary-500 transition-colors">{method.label}</div>
                           <div className="text-sm text-neutral-400">{method.value}</div>
                         </div>
-                      </div>
+                      </a>
                     );
                   })}
                 </div>
               </div>
 
-              {/* Availability Status */}
+              {/* Job Search Status */}
               <div className="bg-bg-elevated border border-neutral-700 rounded-xl p-6">
                 <h3 className="font-mono text-lg font-semibold text-primary-500 mb-6">
-                  Availability Status
+                  Job Search Status
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse" />
-                    <span className="font-mono text-sm text-neutral-200">Available for new projects</span>
+                    <span className="font-mono text-sm text-neutral-200">Actively Seeking Opportunities</span>
                   </div>
                   <div className="text-sm text-neutral-400">
-                    <div className="mb-2">Response time: Within 24 hours</div>
-                    <div>Time zone: IST (UTC+5:30)</div>
+                    <div className="mb-2">Preferred Role: DevOps & Cloud Engineer</div>
+                    <div className="mb-2">Preferred Location: Ho Chi Minh City, Vietnam (or Remote)</div>
+                    <div>Availability: Immediate / Ready to start</div>
                   </div>
                 </div>
               </div>

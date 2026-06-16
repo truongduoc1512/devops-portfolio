@@ -54,43 +54,20 @@ check_content "src/components/visual/VisualComponents.tsx" "export.*ProgressBar"
 check_content "src/components/visual/VisualComponents.tsx" "export.*InteractiveButton" "Interactive Button Export"
 echo ""
 
-# Check blog components
-check_file "src/components/blog/EnhancedBlog.tsx" "Enhanced Blog Component"
-check_content "src/components/blog/EnhancedBlog.tsx" "const blogPosts" "Blog Posts Data"
-check_content "src/components/blog/EnhancedBlog.tsx" "Featured Articles" "Featured Section"
-check_content "src/components/blog/EnhancedBlog.tsx" "CategoryFilter" "Category Filtering"
-check_content "src/components/blog/EnhancedBlog.tsx" "ViewToggle" "View Toggle Feature"
-echo ""
 
-# Check case studies components
-check_file "src/components/case-studies/EnhancedCaseStudies.tsx" "Enhanced Case Studies Component"
-check_content "src/components/case-studies/EnhancedCaseStudies.tsx" "const caseStudies" "Case Studies Data"
-check_content "src/components/case-studies/EnhancedCaseStudies.tsx" "Tab Navigation" "Tabbed Navigation"
-check_content "src/components/case-studies/EnhancedCaseStudies.tsx" "Impact Metrics" "Metrics Display"
-echo ""
 
-# Check page components
-check_file "src/pages/Blog.tsx" "Blog Page Component"
-check_file "src/pages/CaseStudies.tsx" "Case Studies Page Component"
-echo ""
+
+
 
 echo -e "${BLUE}🔧 Configuration Updates Verification${NC}"
 echo "======================================="
 
 # Check App.tsx updates
 check_file "src/App.tsx" "App Component (Updated)"
-check_content "src/App.tsx" "import.*Blog" "Blog Import"
-check_content "src/App.tsx" "import.*CaseStudies" "Case Studies Import"
-check_content "src/App.tsx" "/blog" "Blog Route"
-check_content "src/App.tsx" "/case-studies" "Case Studies Route"
 echo ""
 
 # Check Navbar updates
 check_file "src/components/Navbar.tsx" "Navbar Component (Updated)"
-check_content "src/components/Navbar.tsx" "BookOpen" "Blog Icon Import"
-check_content "src/components/Navbar.tsx" "FileText" "Case Studies Icon Import"
-check_content "src/components/Navbar.tsx" "'/blog'" "Blog Navigation Item"
-check_content "src/components/Navbar.tsx" "'/case-studies'" "Case Studies Navigation Item"
 echo ""
 
 # Check CSS updates
@@ -135,19 +112,6 @@ echo -e "${BLUE}📊 Content Analysis${NC}"
 echo "===================="
 
 # Count content in files
-if [ -f "src/components/blog/EnhancedBlog.tsx" ]; then
-    echo -e "${GREEN}📖 Blog Content Analysis${NC}"
-    echo "  Total blog posts: $(grep -c '"id":' src/components/blog/EnhancedBlog.tsx | head -1 || echo "0")"
-    echo "  Categories: DevOps, Cloud Infrastructure, Full-Stack"
-    echo "  Features: Search, Filter, Featured, Metrics"
-fi
-
-if [ -f "src/components/case-studies/EnhancedCaseStudies.tsx" ]; then
-    echo -e "${GREEN}📊 Case Studies Content Analysis${NC}"
-    echo "  Total case studies: $(grep -c '"id":' src/components/case-studies/EnhancedCaseStudies.tsx | head -1 || echo "0")"
-    echo "  Study types: EKS/GitOps, WebSocket, Infrastructure Automation"
-    echo "  Features: Tabs, Metrics, Timeline, Architecture"
-fi
 echo ""
 
 echo -e "${BLUE}🎯 Integration Status Summary${NC}"
@@ -158,14 +122,8 @@ passed_checks=0
 
 # Count passed checks (simplified verification)
 if [ -f "src/components/visual/VisualComponents.tsx" ]; then ((passed_checks++)); fi
-if [ -f "src/components/blog/EnhancedBlog.tsx" ]; then ((passed_checks++)); fi
-if [ -f "src/components/case-studies/EnhancedCaseStudies.tsx" ]; then ((passed_checks++)); fi
-if [ -f "src/pages/Blog.tsx" ]; then ((passed_checks++)); fi
-if [ -f "src/pages/CaseStudies.tsx" ]; then ((passed_checks++)); fi
-if grep -q "/blog" src/App.tsx 2>/dev/null; then ((passed_checks++)); fi
-if grep -q "/case-studies" src/App.tsx 2>/dev/null; then ((passed_checks++)); fi
 
-((total_checks = 8))
+((total_checks = 1))
 
 success_rate=$((passed_checks * 100 / total_checks))
 

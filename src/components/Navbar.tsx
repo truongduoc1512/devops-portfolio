@@ -1,19 +1,17 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, ChevronRight, BookOpen, FileText } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const navItems = [
+  const navItems: { path: string; label: string; icon?: any }[] = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/skills', label: 'Skills' },
     { path: '/projects', label: 'Projects' },
-    { path: '/blog', label: 'Blog', icon: BookOpen },
-    { path: '/case-studies', label: 'Case Studies', icon: FileText },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -27,7 +25,7 @@ export const Navbar = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 group">
               <div className="text-primary-500 font-mono font-bold text-xl tracking-wide">
-                <span className="text-accent-500">&gt;</span>
+                <span className="text-accent-500">truongduoc.ops</span>
                 <span className="group-hover:text-primary-500 transition-colors duration-200">
                   _
                 </span>

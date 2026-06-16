@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, Code2 } from 'lucide-react';
+import { ExternalLink, Code2 } from 'lucide-react';
 import { Grid3DBackground } from '../components/Grid3D';
 import { Typewriter } from '../components/Typewriter';
 import { HERO_CONTENT, SKILLS, PROJECTS } from '../data/portfolio';
 
 export const Home = () => {
   const stats = [
-    { label: 'Years Experience', value: '1+' },
-    { label: 'Cloud Platforms', value: '3' },
-    { label: 'Projects Completed', value: '10+' },
-    { label: 'Technologies', value: '19+' },
+    { label: 'Academic Year', value: '3rd Year' },
+    { label: 'Cloud Platforms', value: '2' },
+    { label: 'Projects Completed', value: '3+' },
+    { label: 'Technologies Used', value: '15+' },
   ];
 
   const featuredSkills = SKILLS.slice(0, 6);
@@ -19,7 +19,7 @@ export const Home = () => {
     <div className="min-h-screen bg-bg-page relative overflow-hidden">
       {/* 3D Grid Background */}
       <Grid3DBackground />
-      
+
       {/* Main Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -30,9 +30,9 @@ export const Home = () => {
             className="space-y-8"
           >
             {/* Terminal prompt */}
-            <div className="font-mono text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide">
-              <span className="text-accent-500 mr-3">$</span>
-              <span className="text-primary-500">whoami</span>
+            <div className="font-mono text-lg md:text-xl lg:text-2xl font-semibold tracking-wide">
+              <span className="text-accent-500 mr-3">&gt;</span>
+              <span className="text-primary-500">Hello World, I am Truong Hoai Duoc</span>
             </div>
 
             {/* Typewriter heading */}
@@ -171,44 +171,6 @@ export const Home = () => {
               <span className="mr-2">View all skills</span>
               <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 relative z-10 bg-gradient-to-b from-transparent to-bg-elevated/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-bg-elevated border border-primary-500/20 p-12 rounded-2xl shadow-glow"
-          >
-            <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-6">
-              Ready to Deploy Your Vision?
-            </h2>
-            <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              Let's build something amazing together. From infrastructure automation to full-stack development, 
-              I'm here to turn your ideas into production reality.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-bg-surface font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-glow hover:shadow-card-hover"
-              >
-                Start a Project
-              </Link>
-              <a
-                href="https://github.com/neerajnakka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-semibold rounded-lg transition-all duration-200"
-              >
-                <Github className="mr-2 h-5 w-5" />
-                View Code
-              </a>
-            </div>
           </motion.div>
         </div>
       </section>

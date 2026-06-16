@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
 import { ExternalLink, Github, Filter } from 'lucide-react';
@@ -38,17 +39,15 @@ export const Projects = () => {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-mono font-medium transition-all duration-200 ${
-                  activeFilter === filter.id
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-mono font-medium transition-all duration-200 ${activeFilter === filter.id
                     ? 'bg-primary-500 text-bg-surface shadow-glow'
                     : 'bg-bg-elevated text-neutral-200 border border-neutral-700 hover:border-primary-500/50 hover:text-primary-500'
-                }`}
+                  }`}
               >
                 <Filter size={16} />
                 <span>{filter.label}</span>
-                <span className={`text-xs px-2 py-1 rounded-full ${
-                  activeFilter === filter.id ? 'bg-bg-surface text-primary-500' : 'bg-neutral-700 text-neutral-400'
-                }`}>
+                <span className={`text-xs px-2 py-1 rounded-full ${activeFilter === filter.id ? 'bg-bg-surface text-primary-500' : 'bg-neutral-700 text-neutral-400'
+                  }`}>
                   {filter.count}
                 </span>
               </button>
@@ -81,14 +80,13 @@ export const Projects = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-surface via-transparent to-transparent opacity-60" />
-                  
+
                   {/* Project Type Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${
-                      project.category === 'devops' 
+                    <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${project.category === 'devops'
                         ? 'bg-green-500/20 text-green-500 border border-green-500/30'
                         : 'bg-blue-500/20 text-blue-500 border border-blue-500/30'
-                    }`}>
+                      }`}>
                       {project.category === 'devops' ? 'DevOps' : 'Full-Stack'}
                     </span>
                   </div>
@@ -134,7 +132,7 @@ export const Projects = () => {
                       <Github size={16} className="group-hover/btn:scale-110 transition-transform" />
                       <span className="text-sm font-mono">Code</span>
                     </a>
-                    
+
                     {project.websiteLink && (
                       <a
                         href={project.websiteLink}
@@ -180,7 +178,7 @@ export const Projects = () => {
               <div className="text-accent-500">
                 $ cat project_summary.txt
               </div>
-              
+
               <div className="space-y-2 text-neutral-200">
                 <div className="flex justify-between">
                   <span>Total Projects:</span>
@@ -224,29 +222,28 @@ export const Projects = () => {
             className="bg-gradient-to-br from-bg-elevated to-bg-surface border border-primary-500/20 p-12 rounded-2xl shadow-glow"
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-6">
-              Interested in Collaboration?
+              Looking for a DevOps Engineer?
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              These projects showcase my expertise in DevOps and full-stack development. 
-              Let's discuss how we can work together on your next project.
+              These projects demonstrate my hands-on experience in building CI/CD, managing cloud infrastructure, and orchestrating containerized environments. I'm actively seeking junior or internship roles.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://github.com/neerajnakka"
+                href="https://github.com/truongduoc1512"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-bg-surface font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-glow hover:shadow-card-hover"
               >
                 <Github className="mr-2 h-5 w-5" />
-                View All Projects
+                GitHub Profile
               </a>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-semibold rounded-lg transition-all duration-200"
               >
                 <ExternalLink className="mr-2 h-5 w-5" />
-                Start a Project
-              </a>
+                Contact / Hire Me
+              </Link>
             </div>
           </motion.div>
         </div>

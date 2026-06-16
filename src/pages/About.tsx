@@ -6,19 +6,19 @@ import { Calendar, MapPin, Code, Zap } from 'lucide-react';
 export const About = () => {
 const timeline = [
   {
-    year: '2023 - Present',
-    title: 'DevOps Engineer',
+    year: '2025 - Present',
+    title: 'Systems Architect & DevOps Engineer (Projects)',
     company: '',
     description:
-      'Building and managing cloud infrastructure, CI/CD pipelines, containerized workloads, and automation solutions across AWS and Google Cloud Platform (GCP) using Terraform, Docker, Kubernetes, and modern DevOps practices.',
+      'Architecting distributed microservices, engineering automated CI/CD pipelines using Jenkins (Master-Worker topology) and GitHub Actions, and deploying highly available environments on AWS.',
     icon: Code,
   },
   {
-    year: '2019 - 2023',
-    title: 'Computer Science Graduate',
-    company: 'CVR College Of Engineering',
+    year: '2023 - 2027',
+    title: 'IT Engineering Student',
+    company: 'Ho Chi Minh City University of Transport (UTH)',
     description:
-      "Bachelor's degree with focus on software engineering and cloud computing.",
+      "Pursuing a Bachelor's degree with a strong focus on software engineering, network administration, and cloud computing methodologies.",
     icon: Calendar,
   },
 ];
@@ -27,17 +27,17 @@ const timeline = [
     {
       icon: Zap,
       title: 'Automation First',
-      description: 'Every manual process should be automated, every deployment should be reproducible.',
+      description: 'Every manual process from code testing to deployment should be automated. I believe in strictly isolating build environments to ensure reproducible and secure deployments.',
     },
     {
       icon: Code,
-      title: 'Infrastructure as Code',
-      description: 'Treat infrastructure with the same discipline as application code.',
+      title: 'Reliable Infrastructure',
+      description: 'Treat infrastructure and network configurations with the exact same discipline and rigorous testing as application logic.',
     },
     {
       icon: MapPin,
-      title: 'Cloud Native',
-      description: 'Build for the cloud from day one, embrace containerization and orchestration.',
+      title: 'High Availability',
+      description: 'Design systems to be fault-tolerant from day one, whether it\'s setting up database replication clusters or configuring multi-area network routing.',
     },
   ];
 
@@ -69,27 +69,21 @@ const timeline = [
                 </div>
                 <div className="space-y-4 text-neutral-200 leading-relaxed">
                   <Typewriter
-                    text="Hello, I'm Neeraj Chandra Nakka, and I build reliable cloud platforms that transform ideas into production-ready systems."
+                    text="Hello, I'm Truong Hoai Duoc, and I build reliable infrastructure that transforms code into highly available systems."
                     delay={30}
                     className="text-primary-500 font-semibold block mb-4"
                   />
                   <p>
-                    I design, automate, and deploy systems that turn code into production-grade reality. 
-                    My journey began with full-stack development—building web apps with Java, React, and Node.js.
+                    I design, automate, and deploy systems with a strong foundation in backend development—building dynamic, server-side applications using Java Spring Boot, Node.js, and FastAPI.
                   </p>
                   <p>
-                    Over time, that foundation evolved into a passion for DevOps and Cloud Engineering, 
-                    where I now focus on crafting scalable infrastructure, clean CI/CD pipelines, and resilient deployments.
+                    Over time, this foundation evolved into a passion for DevOps, Cloud Infrastructure, and Network Administration. I now focus on crafting scalable architectures, strictly isolated CI/CD pipelines, and resilient deployments.
                   </p>
-                 <p>
-                    I work across AWS and Google Cloud Platform (GCP), orchestrate containers with Docker and Kubernetes,
-                    and define infrastructure using Terraform and automation tooling. Behind the command line,
-                    I'm equally comfortable in version control and workflow automation, using Git, GitHub,
-                    GitLab CI/CD, and modern observability practices to bridge collaboration and delivery.
+                  <p>
+                    I work actively across AWS and Google Cloud Platform (GCP), orchestrate containerized environments with Docker Compose, and automate workflows using GitHub Actions and Jenkins. Behind the command line, I am equally comfortable designing complex network topologies like OSPF multi-area and ensuring high availability through database replication.
                   </p>
                   <p className="text-primary-500 font-medium">
-                    For me, DevOps isn't just about speed—it's about precision, repeatability, 
-                    and creating systems that empower developers to ship confidently and innovate faster.
+                    For me, DevOps is about bridging the gap between development and operations through reliable automation, empowering teams to ship dynamic applications confidently and efficiently.
                   </p>
                 </div>
               </div>
@@ -110,7 +104,7 @@ const timeline = [
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Experience</span>
-                    <span className="text-primary-500 font-mono">1+ years</span>
+                    <span className="text-primary-500 font-mono">Hands-on Project Exp</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Cloud Platforms</span>
@@ -118,11 +112,11 @@ const timeline = [
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Projects</span>
-                    <span className="text-primary-500 font-mono">7+ deployed</span>
+                    <span className="text-primary-500 font-mono">3+ Core Systems</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Technologies</span>
-                    <span className="text-primary-500 font-mono">19+ mastered</span>
+                    <span className="text-primary-500 font-mono">15+ Mastered</span>
                   </div>
                 </div>
               </div>
@@ -133,12 +127,11 @@ const timeline = [
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {[
-  'Cloud Architecture',
-  'Site Reliability Engineering',
-  'Infrastructure as Code',
-  'CI/CD Automation',
-  'Kubernetes & Containers'
-].map((skill) => (
+                    'Cloud Infrastructure (AWS/GCP)',
+                    'CI/CD Automation',
+                    'Network & System Admin',
+                    'Containerization'
+                  ].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 bg-neutral-800 text-neutral-200 text-sm rounded-md border border-neutral-700 hover:border-primary-500/50 transition-colors"

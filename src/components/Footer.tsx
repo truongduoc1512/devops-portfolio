@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { CONTACT } from '../data/portfolio';
 
 export const Footer = () => {
@@ -17,13 +17,8 @@ export const Footer = () => {
       icon: Linkedin,
     },
     {
-      name: 'Twitter',
-      url: CONTACT.social.twitter,
-      icon: Twitter,
-    },
-    {
       name: 'Email',
-      url: `mailto:${CONTACT.email}`,
+      url: `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT.email}`,
       icon: Mail,
     },
   ];
@@ -57,15 +52,15 @@ export const Footer = () => {
 
           {/* Terminal-style copyright */}
           <div className="font-mono text-sm text-neutral-400 text-center">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 justify-center">
               <span className="text-accent-500">$</span>
               <span className="text-primary-500">cat</span>
               <span>copyright.txt</span>
             </div>
             <div className="mt-2 space-y-1 text-xs">
-              <p>© {currentYear} DevOps & Cloud Engineer</p>
+              <p>© {currentYear} Truong Hoai Duoc | DevOps & Cloud Engineer</p>
               <p>Built with React, TypeScript, and Cyber Terminal Aesthetic</p>
-              <p className="text-primary-500">Status: Available for opportunities</p>
+              <p className="text-primary-500">Status: Open to DevOps & Cloud Engineer Roles (HCM / Remote)</p>
             </div>
           </div>
 
