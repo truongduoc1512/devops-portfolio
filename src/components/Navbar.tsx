@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, FileText } from 'lucide-react';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,6 +72,17 @@ export const Navbar = () => {
                   </Link>
                 );
               })}
+              
+              {/* Resume CV Button */}
+              <a
+                href="/TruongHoaiDuoc_CV_DevOps_final-1.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-4 py-1.5 border border-primary-500 text-primary-500 rounded hover:bg-primary-500/10 transition-all duration-200 font-mono text-sm shadow-glow hover:shadow-[0_0_12px_rgba(0,255,65,0.5)]"
+              >
+                <FileText size={14} />
+                <span>Resume</span>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -130,6 +141,20 @@ export const Navbar = () => {
                   </Link>
                 );
               })}
+
+              {/* Resume Button Mobile */}
+              <div className="pt-2 pb-1 border-t border-neutral-700/50">
+                <a
+                  href="/TruongHoaiDuoc_CV_DevOps_final-1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-2 px-3 py-3 border border-primary-500 text-primary-500 rounded-md hover:bg-primary-500/10 transition-colors font-mono text-base shadow-glow"
+                >
+                  <FileText size={18} />
+                  <span>Resume</span>
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
